@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arman Shikder | Futuristic Portfolio</title>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #050816; color: white; text-align: center; overflow-x: hidden; }
+        
+        /* Background Glow Effect */
+        body::before { content: ''; position: fixed; top: -100px; right: -100px; width: 300px; height: 300px; background: rgba(56, 189, 248, 0.15); border-radius: 50%; blur: 100px; filter: blur(100px); z-index: -1; }
+        body::after { content: ''; position: fixed; bottom: -100px; left: -100px; width: 250px; height: 250px; background: rgba(147, 51, 234, 0.15); border-radius: 50%; filter: blur(100px); z-index: -1; }
+
+        /* Keyframes for animations */
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes glow { 0% { text-shadow: 0 0 10px rgba(56, 189, 248, 0.7); } 50% { text-shadow: 0 0 20px rgba(56, 189, 248, 0.9), 0 0 30px rgba(56, 189, 248, 0.7); } 100% { text-shadow: 0 0 10px rgba(56, 189, 248, 0.7); } }
+
+        /* Header Section */
+        header { padding: 150px 20px; background: radial-gradient(circle at center, #111827 0%, #050816 100%); position: relative; }
+        h1 { font-size: 3.5rem; margin-bottom: 15px; color: #fff; text-transform: uppercase; letter-spacing: 3px; animation: fadeInDown 1s ease-out, glow 3s ease-in-out infinite; }
+        p { font-size: 1.3rem; color: #94a3b8; animation: fadeInUp 1s ease-out 0.5s; opacity: 0; animation-fill-mode: forwards; }
+        
+        /* Main Container */
+        .container { padding: 80px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+        
+        /* Glassmorphism Card Effect */
+        .card { background: rgba(17, 24, 39, 0.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); max-width: 600px; width: 100%; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s ease-out 1s; animation-fill-mode: forwards; }
+        
+        /* Hover effects for card */
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.3); }
+        .card h3 { color: #38bdf8; font-size: 1.8rem; margin-top: 0; }
+        .card p { color: #e2e8f0; font-size: 1.1rem; line-height: 1.6; animation: none; opacity: 1; }
+
+        /* Futuristic Button with Glow */
+        .btn { display: inline-block; margin-top: 30px; padding: 12px 30px; background: transparent; color: #38bdf8; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; border: 2px solid #38bdf8; transition: all 0.3s ease; position: relative; overflow: hidden; z-index: 1; }
+        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: #38bdf8; transition: all 0.3s ease; z-index: -1; }
+        
+        /* Button Hover and Active states */
+        .btn:hover { color: #050816; box-shadow: 0 0 20px rgba(56, 189, 248, 0.8); }
+        .btn:hover::before { left: 0; }
+        .btn:active { transform: scale(0.95); }
+
+        /* Footer with Subtle Glow */
+        footer { padding: 40px; font-size: 1rem; color: #64748b; background-color: #03060f; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        footer a { color: #9333ea; text-decoration: none; transition: color 0.3s ease; }
+        footer a:hover { color: #a855f7; text-shadow: 0 0 10px #a855f7; }
+
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) { h1 { font-size: 2.5rem; } p { font-size: 1.1rem; } .card { padding: 30px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>আরমান শিকদার</h1>
+        <p>একজন এথিকাল হ্যাকার ও ওয়েব ডেভেলপার</p>
+        <p>গরিবের শত্রু, বড়লোকের বন্ধু...</p>
+    </header>
+
+    <div class="container">
+        <div class="card" id="about">
+            <h3>আমার সম্পর্কে</h3>
+            <p>আমি একজন প্রযুক্তিপ্রেমী শিক্ষার্থী। আমার স্বপ্ন হলো কোডিং এবং এআই (AI) এর সমন্বয়ে মোসাম্মৎ শারিকা আনজুম এর আইডি থেকে সকল পুরুষছেলে ডিলেট করে দেওয়া । আমি প্রতিদিন নতুন নতুন টেকনোলজি শিখতে ভালোবাসি।</p>
+            <a href="mailto:your-email@gmail.com" class="btn">আমার সাথে যোগাযোগ করুন</a>
+        </div>
+
+        </div>
+
+    <footer>
+        &copy; 2026 আরমান শিকদার | <a href="http://armanshikder.pro.bd">armanshikder.pro.bd</a>
+    </footer>
+
+</body>
+</html>
